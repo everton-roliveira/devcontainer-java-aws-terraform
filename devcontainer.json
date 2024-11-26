@@ -1,0 +1,23 @@
+{
+  "name": "Dev Container Ubuntu",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "args": {
+
+    }
+  },
+  "runArgs": [
+    "--env-file", ".devcontainer/.env"
+  ],
+  "remoteUser": "vscode",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "HashiCorp.terraform",
+        "HashiCorp.HCL",
+        "ms-azuretools.vscode-docker"
+      ]
+    }
+  },
+  "postStartCommand": "/usr/local/bin/aws-configure.sh"
+}
